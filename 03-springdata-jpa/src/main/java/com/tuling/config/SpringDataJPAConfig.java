@@ -37,6 +37,7 @@ public class SpringDataJPAConfig {
         <property name="url" value="jdbc:mysql://localhost:3306/springdata_jpa?characterEncoding=UTF-8"/>
     </bean>
     * */
+
     @Bean
     public DataSource dataSource() {
 

@@ -1,15 +1,11 @@
-package com.tuling.pojo;
+package com.jiang.springdata.pojo;
 
 import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 /***
- * @Author 徐庶   QQ:1092002729
- * @Slogan 致敬大师，致敬未来的你
- *
  * 多（用户）对多（角色）
  */
 @Entity
@@ -34,8 +30,9 @@ public class Role {
     }
 
     public Role() {
+
     }
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<Role> roles;
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    private List<Role> roles;
 }

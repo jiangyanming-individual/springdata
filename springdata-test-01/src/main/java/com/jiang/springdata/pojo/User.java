@@ -48,11 +48,18 @@ public class User {
     private Account account;
 
 
-//    //1对多：
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    //1对多：
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     // 设置外键的字段名
     @JoinColumn(name = "user_id")
     private List<Message> message;
 
+
+    //多对多，生成第三张表：
+    @ManyToMany
+    @JoinTable(name = "tb_user_role",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "role_id")})
+    private List<Role> roles;
 
 }
